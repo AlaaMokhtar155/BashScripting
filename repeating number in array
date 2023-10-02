@@ -1,0 +1,36 @@
+#getting the most repeated number in array 
+#! /bin/bash
+for (( i=0 ; i<=10 ; i++ ))
+do
+function repeating() {
+local array=($@)
+local repeated_num=""
+local  repcount=0
+for num1  in "${array[@]}";
+do
+count=0
+for num2 in "${array[@]}";
+do
+if [ $num1 == $num2 ];
+then
+count=$((count+1))
+fi
+done
+if (( count > repcount ));
+then
+repcount=$count
+repeated_num=$num1
+
+fi
+done
+echo  "the most repeated number in array is $repeated_num"
+echo "the number of reapeating $repcount"
+}
+echo "enter sex elements of array"
+read element
+for my_array in ${element[@]} 
+do
+echo $my_array
+done
+repeating ${element[@]}
+done
