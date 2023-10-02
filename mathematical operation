@@ -1,0 +1,33 @@
+#! /bin/bash
+for (( i=0 ; i<=10 ; i++ ))
+do
+echo "enter two numbers: "
+read -p "number 1 =" num1
+read -p "number 2="  num2
+select choices in  add sub muliplication division power 
+do 
+case $choices  in 
+ add )
+  echo addition = "$((num1+num2))"
+break ;
+;;
+  sub )
+  echo sub= "$((num1 - num2))"
+break ;
+;;
+   muliplication )
+   echo muliplication = "$((num1 * num2))"
+break ;
+;;
+   division )
+   echo div= "$((num1/num2))"
+break;
+;;
+   power)
+    echo power ="$((num1 **num2))"
+break;
+;;
+esac 
+done
+done
+
