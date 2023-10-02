@@ -1,0 +1,39 @@
+#! /bin/bash
+for (( i=0 ;i<10 ; i++ ))
+do
+echo "enter a number"
+read num
+t=0
+if [ $num -eq 2 ]
+then 
+echo "the number is prime"
+elif [ $num -eq 1 ]
+then 
+echo "the number neither is prime or not prime"
+elif [ $num -gt 2 ]
+then
+if [ $((num%2)) -eq 0 ]
+then
+echo "the number is not prime"
+else 
+for (( j=2 ; j < $num ; j++ ))
+do
+result=$((num%j))
+if [ $result  -eq  0 ]
+then
+t=1
+fi
+done
+if  [ $t -eq  1 ]
+then
+echo "the number is not prime"
+t=0
+#break;
+else 
+echo "the numberis prime"
+#break;
+fi
+fi
+fi
+done
+break;
